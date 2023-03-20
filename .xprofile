@@ -1,0 +1,33 @@
+# Faster key repeat and delay
+xset r rate 210 40
+
+# Hides cursor after 3 seconds of idling
+unclutter -idle 3 &
+
+# Notifications
+dunst &
+
+# Screenshots
+flameshot &
+
+# Redshift
+redshift &
+
+# Wallpaper
+feh --bg-fill --randomize ~/Pictures/wp/*
+
+# Picom
+picom --experimental-backends &
+
+# Fix for java applications missbehaving
+wmname LG3D
+
+# Config paths
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE=$HOME/.cache
+export XDG_DATA=$HOME/.local/share
+
+# ENV
+export EDITOR="nvim"
+export BROWSER="brave-browser"
+export TERMINAL="alacritty"

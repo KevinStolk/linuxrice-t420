@@ -1,0 +1,14 @@
+# Speed up scrolling for Zathura 
+"^zathura$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+
+# Speed up scrolling for Brave 
+"^brave-browser$"
+    None, Up, Button4, 4
+        None, Down, Button5, 4
+
+# Speed up scrolling for Discord
+"^discord$"
+    None, Up, Button4, 4
+        None, Down, Button5, 4

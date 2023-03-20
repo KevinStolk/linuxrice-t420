@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Use $XINITRC variable if file exists.
+# [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+
+# sudo not required for some system commands
+for command in mount umount sv updatedb su shutdown poweroff reboot ; do
+    alias $command="sudo $command"
+done; unset command
+
+se() { cd ~/.local/bin; $EDITOR $(fzf) ;}
+
+# Colorize commands when possible.
+alias ls="ls -hN --color=auto --group-directories-first"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ccat="highlight --out-format=ansi"
+alias ip="ip -color=auto"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -vI"
+alias bc="bc -ql"
+alias mkd="mkdir -pv"
+alias ls="ls -hN --color=auto --group-directories-first"
+alias yt="yt-dlp --embed-metadata -i"
+alias yta="yt -x -f bestaudio/best"
+alias ffmpeg="ffmpeg -hide_banner"
+
+# application aliases
+alias v="$EDITOR"
+alias e="$EDITOR"
+alias m="mpv"
+alias sdn="shutdown -h now"
+alias sln="slock systemctl suspend -i"
+alias sapt="sudo apt-get install"
+alias saptu="sudo apt-get update"
+alias z="zathura"
+
+# git aliases
+alias g="git"
+alias gst="git status"
+alias gc="git commit"
+alias ga="git add"
+alias gpl="git pull"
+alias gpom="git pull origin master"
+alias gpu="git push"
+alias gpuom="git push origin master"
+alias gd="git diff"
+alias gch="git checkout"
+alias gnb="git checkout -b"
+alias gac="git add . && git commit"
+alias grs="git restore --staged ."
+alias gre="git restore"
+alias gr="git remote"
+alias gcl="git clone"
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gt="git ls-tree -r master --name-only"
+alias grm="git remote"
+alias gb="git branch"
+alias gf="git fetch"
+
+alias \
+    vim="nvim" \
+    v="nvim" \
+    vi="nvim" \
+    vim="nvim" \
+    sudoedit="sudo -E -s nvim" \
+    vc="v $HOME/.config/nvim/init.lua" \
+    vi3="v $HOME/.config/i3/config" \
+    tc="v $HOME/.config/tmux" \
+    lg="lazygit" \
+    vw="v vimwiki/index.md" \
+    neo="neofetch" \
+    cm="cmatrix"
